@@ -9,8 +9,7 @@ module.exports = {
 	debug: true,
 	devtool: 'source-map',
 	entry: {
-		// React
-		app: './static/react/index'
+		app: './static/index'
 	},
 	module: {
 		loaders: [{

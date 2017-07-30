@@ -8,3 +8,5 @@ fibonacci/wsgi.py
 db.sqlite3
 package-lock.json
 webpack-stats.json
+
+.idea
