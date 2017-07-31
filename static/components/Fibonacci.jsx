@@ -14,13 +14,11 @@ export default class Fibonacci extends React.Component {
 	}
 	onClick() {
 		const params = { fZero: this.state.fZero, fOne: this.state.fOne };
-		console.log([this.state.fZero, this.state.fOne])
 		$.ajax({
 			type: 'GET',
 			data: params,
 			url: '/api/',
 			success: results => {
-				console.log(results);
 				this.setState({ results });
 			}
 		})
