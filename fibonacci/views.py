@@ -7,7 +7,7 @@ from .helpers import fibonacci_sequence
 
 @api_view(['GET'])
 def fibonacci(request):
-    return Response(fibonacci_sequence(request.GET['fZero'], request.GET['fOne']))
+    return Response(fibonacci_sequence(int(request.GET['fZero']), int(request.GET['fOne'])))
 
 
 def home(request):
