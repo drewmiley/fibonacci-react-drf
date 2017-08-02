@@ -15,16 +15,38 @@ export default class Fibonacci extends React.Component {
 	handleInputLength(e){
 		this.setState({ length: parseInt(e.target.value, 10)});
 	}
+	fibonacci_sequence(params) {
+		let a = parseInt(params.fZero, 10);
+		let b = parseInt(params.fOne, 10);
+		let c = Math.floor(parseInt(params.length, 10) / 2);
+		if (params.length === 1) {
+			return [a];
+		}
+		let results = [a, b];
+		for (var i = 1; i < c; i++) {
+			a = a + b;
+			b = b + a;
+			results.push(a);
+			results.push(b);
+		}
+		if (parseInt(params.length, 10) % 2 != 0) {
+			a = a + b;
+			results.push(a);
+		}
+		return results;
+	}
 	onClick() {
 		const params = { fZero: this.state.fZero, fOne: this.state.fOne, length: this.state.length };
-		$.ajax({
-			type: 'GET',
-			data: params,
-			url: '/api/',
-			success: results => {
-				this.setState({ results });
-			}
-		});
+		// $.ajax({
+		// 	type: 'GET',
+		// 	data: params,
+		// 	url: '/api/',
+		// 	success: results => {
+		// 		this.setState({ results });
+		// 	}
+		// });
+		const results = this.fibonacci_sequence(params);
+		this.setState({ results });
 	}
 	render() {
 		return (
