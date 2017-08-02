@@ -44,7 +44,7 @@ module.exports = {
 			'jQuery': 'jquery',
 			'window.jQuery': 'jquery'
 		}),
-		new CleanWebpackPlugin(['./static/bundles'], {
+		new CleanWebpackPlugin(['./assets/webpack_bundles'], {
 			root: __dirname,
 			verbose: true,
 			dry: false
